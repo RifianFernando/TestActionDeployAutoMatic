@@ -1,0 +1,20 @@
+# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
+# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
+
+name: Technotic Publish Action
+
+on: 
+  push: master
+
+jobs:
+    ssh:
+        runs-on: ubuntu-latest
+        steps:
+            - name: executing remote ssh commands using ssh key
+              uses: appleboy/ssh-action@v0.1.7
+              with:
+                host: ${{ secrets.HOST }}
+                username: ${{ secrets.USERNAME }}
+                key: ${{ secrets.KEY }}
+                port: ${{ secrets.PORT }}
+                script: whoami
