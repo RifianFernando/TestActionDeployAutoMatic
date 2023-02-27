@@ -3,8 +3,10 @@
 
 name: Technotic Publish Action
 
-on: 
-  push: master
+on:
+  push:
+    branches:
+      - 'master'
 
 jobs:
     ssh:
