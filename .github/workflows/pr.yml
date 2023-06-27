@@ -32,8 +32,8 @@ jobs:
                   target_branch: master
                   title: 'ci: automated production sync to master'
                   body: '**Automated pull request**'
-                  reviewer: RnDBNCC
-                  assignee: RnDBNCC
+                  reviewer: RifianFernando
+                  assignee: RifianFernando
                   label: automated-pr, automerge
                   template: .github/PULL_REQUEST_TEMPLATE.md
                   old_string: 'Explain the task'
