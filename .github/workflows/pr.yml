@@ -27,7 +27,7 @@ jobs:
                   fetch-depth: 0
             - uses: devops-infra/action-pull-request@v0.5.5
               with:
-                  github_token: ${{ secrets.TOKEN }}
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
                   source_branch: production
                   target_branch: master
                   title: 'ci: automated production sync to master'
@@ -35,14 +35,12 @@ jobs:
                   reviewer: RifianFernando
                   assignee: RifianFernando
                   label: automated-pr, automerge
-                  template: .github/PULL_REQUEST_TEMPLATE.md
-                  old_string: 'Explain the task'
                   get_diff: true
                   ignore_users: 'dependabot'
                   allow_no_diff: false
             - uses: reitermarkus/automerge@v2
               with:
-                  token: ${{ secrets.TOKEN }}
+                  token: ${{ secrets.GITHUB_TOKEN }}
                   merge-method: squash
                   do-not-merge-labels: never-merge
                   required-labels: automerge
